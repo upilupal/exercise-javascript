@@ -1,98 +1,83 @@
 //1.  convert celsius to farenheit
 
 const celcius = 60;
-const farenheit = ((celcius*9/5) + 32);
+const farenheit = (celcius * 9) / 5 + 32;
 console.log(farenheit);
 
 //2. check wether the number is odd or even
 
-const number = 4;
+const number = 6;
 
 if (number % 2 === 0) {
-    console.log("angka genap")
+  console.log("angka genap");
 } else {
-    console.log("angka ganjil")
-};
+  console.log("angka ganjil");
+}
+
+// atau bisa juga disederhanakan dengan ternary
+
+console.log(number % 2 === 0 ? "angka genap" : "angka ganjil");
 
 //3. check whether the number is prime or not
 
 // bilangan prima = bilangan jika dibagi 2 sisa 1
 
-// let checkNumber = 7; 
+// let checkNumber = 7;
 
 // let isPrime = true;
 
 // if (checkNumber <= 1) {
-//     isPrime = false;
+//   isPrime = false;
 // } else {
-//     for (let i = 2; i <= checkNumber / 2; i++) {
-//         if (checkNumber % i === 0) {
-//             isPrime = false;
-//             break;
-//         }
-//     }   
+//   for (let i = 2; i < checkNumber; i++) {
+//     if (checkNumber % i === 0) {
+//       isPrime = false;
+//       break;
+//     }
+//   }
 // }
 
-// if (isPrime) {
-//     console.log(`${checkNumber} is a prime number.`);
-// } else {
-//     console.log(`${checkNumber} is not a prime number.`);
-// }
+// console.log(isPrime);
 
+//4. find the sum of the number 1 to n
 
-    //4. find the sum of the number 1 to n
+// const num = 5;
+// let sum = 0;
+// let message = "";
 
-    // let sum = 0;
-    // let n = 5;
-    // for (i = 1; i <= n; i++) {
-    //     sum += i;
-    // };
-    // console.log(sum);
+// for (i = 1; i <= num; i++) {
+//     console.log(i)
+//     sum += i;
 
-    //5. find factorial of Number
+//     message += i + (i !== num ? " + " : "");
+// };
+// console.log(sum);
+// console.log(message + " = " + sum);
+
+//5. find factorial of Number
 
 //    let result = 1;
-//    const num = 4;
+//    const num = 6;
+//    let message = "";
 
 //    for(i=1; i<=num; i++) {
 //     result *= i;
+
+//     message += i + (i !== num ? " * " : "");
 //    };
-//    console.log(result)
+//    console.log(result);
+//    console.log(message + " = " + result);
 
-   // 6. print the first n fibonacci numbers
+// 6. print the first n fibonacci numbers
 
-    let n = 15;
-	let num1 = 0;
-	let num2 = 1;
-	let sum;
-	let i = 0;
-	for (i = 1; i < n; i++) {
-		sum = num1 + num2;
-		num1 = num2;
-		num2 = sum;
-	}
+let n = 15;
+let num1 = 0;
+let num2 = 1;
+let sum;
+for (i = 0; i < n; i++) {
+  sum = num1 + num2;
+  num1 = num2;
+  num2 = sum;
+}
 
-console.log(sum);
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    
-
-    
-
-
-
-
+console.log(num1);

@@ -16,9 +16,9 @@ const cleanStr = inputString.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 const reversedStr = cleanStr.split('').reverse().join('');
 
 if(cleanStr === reversedStr) {
-    console.log(`"${inputString}" is a palindrome.`)
+    console.log(`"${inputString}" is a palindrome.`);
 } else {
-    console.log(`"${inputString}" is not a palindrome.`)
+    console.log(`"${inputString}" is not a palindrome.`);
 }
 
 // convert centimeter to kilometer
@@ -101,3 +101,5 @@ if (num1 >= num2 && num1 >= num3) {
 }
 
 // 
+
+
