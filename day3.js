@@ -87,43 +87,43 @@
 // console.log(largest);
 
 // conditional statement to sort three numbers
-const num1 = 14;
-const num2 = 27;
-const num3 = 22;
+// const num1 = 14;
+// const num2 = 27;
+// const num3 = 22;
 
-const smallest = Math.min(num1, num2, num3);
-const largest = Math.max(num1, num2, num3);
-const middle = num1 + num2 + num3 - smallest - largest;
+// const smallest = Math.min(num1, num2, num3);
+// const largest = Math.max(num1, num2, num3);
+// const middle = num1 + num2 + num3 - smallest - largest;
 
-console.log(`${smallest} ${middle} ${largest}`);
+// console.log(`${smallest} ${middle} ${largest}`);
 
-// no 11
-const input = "hello world";
-let type;
+// // no 11
+// const input = "hello world";
+// let type;
 
-if(typeof input === "string") {
-    type = 1;
-} else if(typeof input === "number") {
-    type = 2;
-} else {
-    type = 3;
-}
+// if(typeof input === "string") {
+//     type = 1;
+// } else if(typeof input === "number") {
+//     type = 2;
+// } else {
+//     type = 3;
+// }
 
-console.log(type);
+// console.log(type);
 
 // no 12.
-const inputString = "An apple a day keeps the doctor away".toLowerCase();
-const replaceWord = "a";
-let modifiedString = "";
+// const inputString = "An apple a day keeps the doctor away".toLowerCase();
+// const replaceWord = "a";
+// let modifiedString = "";
 
-for (let i = 0; i < inputString.length; i++) {
-    if (inputString[i] === replaceWord) {
-        modifiedString += "*";
-    } else {
-        modifiedString += inputString[i];
-    }
-}
+// for (let i = 0; i < inputString.length; i++) {
+//     if (inputString[i] === replaceWord) {
+//         modifiedString += "*";
+//     } else {
+//         modifiedString += inputString[i];
+//     }
+// }
 
-console.log(modifiedString);
+// console.log(modifiedString);
 
 

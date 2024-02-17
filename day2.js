@@ -1,22 +1,22 @@
 //1.  convert celsius to farenheit
 
-const celcius = 60;
-const farenheit = (celcius * 9) / 5 + 32;
-console.log(farenheit);
+// const celcius = 60;
+// const farenheit = (celcius * 9) / 5 + 32;
+// console.log(farenheit);
 
-//2. check wether the number is odd or even
+// //2. check wether the number is odd or even
 
-const number = 6;
+// const number = 6;
 
-if (number % 2 === 0) {
-  console.log("angka genap");
-} else {
-  console.log("angka ganjil");
-}
+// if (number % 2 === 0) {
+//   console.log("angka genap");
+// } else {
+//   console.log("angka ganjil");
+// }
 
-// atau bisa juga disederhanakan dengan ternary
+// // atau bisa juga disederhanakan dengan ternary
 
-console.log(number % 2 === 0 ? "angka genap" : "angka ganjil");
+// console.log(number % 2 === 0 ? "angka genap" : "angka ganjil");
 
 //3. check whether the number is prime or not
 
@@ -56,28 +56,28 @@ console.log(number % 2 === 0 ? "angka genap" : "angka ganjil");
 
 //5. find factorial of Number
 
-//    let result = 1;
-//    const num = 6;
-//    let message = "";
+  //  let result = 1;
+  //  const num = 5;
+  //  let message = "";
 
-//    for(i=1; i<=num; i++) {
-//     result *= i;
+  //  for(i=num; i>=1; i--) {
+  //   result *= i;
 
-//     message += i + (i !== num ? " * " : "");
-//    };
-//    console.log(result);
-//    console.log(message + " = " + result);
+  //   message += i + (" * " + i !== num ? " * " : "");
+  //  };
+  //  console.log(result);
+  //  console.log(message + " = " + result);
 
 // 6. print the first n fibonacci numbers
 
-let n = 15;
-let num1 = 0;
-let num2 = 1;
-let sum;
-for (i = 0; i < n; i++) {
-  sum = num1 + num2;
-  num1 = num2;
-  num2 = sum;
-}
+// let n = 15;
+// let num1 = 0;
+// let num2 = 1;
+// let sum;
+// for (i = 0; i < n; i++) {
+//   sum = num1 + num2;
+//   num1 = num2;
+//   num2 = sum;
+// }
 
-console.log(num1);
+// console.log(num1);

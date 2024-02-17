@@ -69,7 +69,7 @@
 //   }
 // }
 
-// const result = bodyMassIndex(74, 173);
+// const result = bodyMassIndex(60, 164);
 
 // console.log(result);
 
@@ -112,24 +112,24 @@
 // console.log(result);
 
 // tanpa menggunakan build in mtehod =============================================================
-const splitString = function(input) {
-    const kata = [];
-    let temp = "";
+// const splitString = function(input) {
+//     const kata = [];
+//     let temp = "";
 
-    for (let i = 0; i < input.length; i++) {
-        if (input[i] === " ") {
-            kata.push(temp);
-            temp = "";
-            continue; // meng skip loopingan
-        }
-        temp += input[i];
-    }
-    kata.push(temp);
+//     for (let i = 0; i < input.length; i++) {
+//         if (input[i] === " ") {
+//             kata.push(temp);
+//             temp = "";
+//             continue; // meng skip loopingan
+//         }
+//         temp += input[i];
+//     }
+//     kata.push(temp);
 
-    return kata;
-};
+//     return kata;
+// };
 
-console.log(splitString("hello world jogja"));
+// console.log(splitString("hello world jogja"));
 
 
 
