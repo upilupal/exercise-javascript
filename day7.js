@@ -14,7 +14,7 @@
 
 // 2. create function to get the inteersection of two object
 
-// function intersection(obj1, obj2) {
+// const intersection = (obj1, obj2) => {
 //   const keys1 = Object.keys(obj1);
 //   const values1 = Object.values(obj1);
 //   const keys2 = Object.keys(obj2);
@@ -23,8 +23,8 @@
 //   const output = {};
 
 //   for (let i = 0; i < keys1.length; i++) {
-//     for (let j = 0; j < keys1.length; j++) {
-//       if (keys1[i] === keys2[i] && values1[i] === values2[i]) {
+//     for (let j = 0; j < keys2.length; j++) {
+//       if (keys1[i] === keys2[j] && values1[i] === values2[j]) {
 //         output[keys1[i]] = obj1[keys1[i]];
 //       }
 //     }
@@ -33,65 +33,84 @@
 //   return output;
 // }
 
-// const object1 = { b: 1, a: 2 };
-// const object2 = { b: 1, a: 2 };
+// const object2 = { b: 1, a: 2, d: 4 };
+// const object1 = { a: 2, b: 1, c: 4 };
+// console.log(intersection(object1, object2));
+
+// CARA KAK DANIEL ========================================================================================================
+// const intersection = (obj1, obj2) => {
+//     const output = {};
+
+//     for (let key in obj1) {
+//         console.log(key);
+//         if (obj1[key] == obj2[key]) {
+//             output[key] = obj1[key];
+//         }
+//     }
+
+//     return output;
+// }
+
+// const object2 = { b: 1, a: 2, d: 4 };
+// const object1 = { a: 2, b: 1, c: 4 };
 // console.log(intersection(object1, object2));
 
 // 3. Create a function to merge two array of student data and remove duplicate data
 
-// function mergeAndRemoveDuplicates(array1, array2) {
-//   const mergedArray = array1.concat(array2);
+// const removeDuplicate = (arr1, arr2) => {
+//   const combineArray = [...arr1, ...arr2];
 
-//   // Create a Set to keep track of unique combinations of 'name' and 'email'
-//   const uniqueEntries = new Set();
+//   const temp = [];
 
-//   // Filter out duplicates based on 'name' and 'email'
-//   const uniqueArray = mergedArray.filter(student => {
-//       const entry = `${student.name}-${student.email}`;
-//       if (!uniqueEntries.has(entry)) {
-//           uniqueEntries.add(entry);
-//           return true;
-//       }
-//       return false;
-//   });
+//   for (let i = 0; i < combineArray.length; i++) {
+//     const duplicateVal = temp.filter((val) => {
+//       return val.email === combineArray[i].email;
+//     });
 
-//   return uniqueArray;
-// }
+//     if (!duplicateVal.length) {
+//       temp.push(combineArray[i]);
+//     }
+//   }
 
-// // Example usage:
+//   return temp;
+// };
+
 // const array1 = [
-//   { name: 'Student 1', email: 'student1@mail.com' },
-//   { name: 'Student 2', email: 'student2@mail.com' }
+//   { name: "Student 1", email: "student1@mail.com" },
+//   { name: "Student 2", email: "student2@mail.com" },
 // ];
 
 // const array2 = [
-//   { name: 'Student 1', email: 'student1@mail.com' },
-//   { name: 'Student 3', email: 'student3@mail.com' }
+//   { name: "Student 1", email: "student1@mail.com" },
+//   { name: "Student 3", email: "student3@mail.com" },
 // ];
 
-// const resultArray = mergeAndRemoveDuplicates(array1, array2);
+// const resultArray = removeDuplicate(array1, array2);
 // console.log(resultArray);
-
 
 // 4.  Create a function that can accept input as an array of objects and switch all values into property an property into value
 
-// function switcValue(arr) {
-//   const switchArray = arr.map(obj => {
-//     const switchObject = {};
-//     for (const key in obj) {
-//       if (obj.hasOwnProperty(key)) {
-//         switchObject[obj[key]] = key ;
-//       }
-//     }
-//     return switchObject;
-//   });
+// const switchValue = (arr) => {
+//     const result = [];
 
-//   return switchArray;
+//     arr.forEach(item => {
+//         let temp = {};
+
+//         for (let key in item) {
+//             // console.log(key);
+//             // console.log(item[key]);
+//             temp[item[key]] = key;
+//         }
+
+//         result.push(temp);
+//     });
+
+//     return result;
 // }
 
 // const arrayInput = [{ name: "David", age: 20 }];
 
-// const result = switcValue(arrayInput);
+// const result = switchValue(arrayInput);
 // console.log(result);
 
 //5. find factorial number
@@ -106,6 +125,6 @@
 //   return result; // Add this line to return the result
 // }
 
-// const num = 5;
+// const num = 4;
 // const factor = factorial(num);
 // console.log(factor);
