@@ -23,77 +23,69 @@
 // ■ Show winner name
 
 // class Player {
-//     constructor(name) {
-//       this.name = name;
-//       this.health = 100;
-//       this.power = 10;
-//     }
+//   constructor(name, health = 100, power = 10) {
+//     this.name = name;
+//     this.health = health;
+//     this.power = power;
+//   }
+
+//   damage(power) {
+//     this.health -= power;
+//   }
+
+//   useItem(item) {
+//     this.health += item.health;
+//     this.power += item.power;
+//   }
+
+//   showStatus() {
+//     return `${this.name} (Health => ${this.health}, Power => ${this.power})`
+//   }
+// }
+
+// class ShootingGame {
+//   constructor(player1, player2) {
+//     this.player1 = player1;
+//     this.player2 = player2;
+//   }
+
+//   getRandomItem() {
+//     const health = Math.random() < 0.5 ? 0 : 10;
+//     const power = Math.random() < 0.5 ? 0 : 10;
+//     return (health, power);
+//   }
+//   start() {
+//     while(this.player1.health > 0 && this.player2.health>0){
+//       this.player1.showStatus();
+//       this.player2.showStatus();
   
-//     hit(power) {
-//       this.health -= power;
-//     }
+//       const itemPlayer1 = this.getRandomItem();
+//       const itemPlayer2 = this.getRandomItem();
   
-//     useItem(item) {
-//       this.health += item.health;
-//       this.power += item.power;
-//     }
+//       this.player1.useItem(itemPlayer1);
+//       this.player2.useItem(itemPlayer2);
   
-//     showStatus() {
-//       console.log(
-//         `${this.name} (Health => ${this.health}, Power => ${this.power})`
-//       );
+//       this.player1.damage(this.player2.power);
+//       this.player2.damage(this.player1.power);
+  
+//       this.player1.showStatus();
+//       this.player2.showStatus();
+      
+//     }
+    
+//     if(this.player1.health <= 0) {
+//       return `${this.player2.name} win`
+//     } else {
+//       return `${this.player1.name} win`
 //     }
 //   }
-  
-//   class ShootingGame {
-//     constructor(player1, player2) {
-//       this.player1 = player1;
-//       this.player2 = player2;
-//     }
-  
-//     getRandomItem() {
-//       return {
-//         health: Math.floor(Math.random() * 2) * 10,
-//         power: Math.floor(Math.random() * 2) * 10,
-//       };
-//     }
-  
-//     start() {
-//       let currentPlayer = this.player1;
-//       let otherPlayer = this.player2;
-  
-//       while (this.player1.health > 0 && this.player2.health > 0) {
-//         console.log("Current turn: ", currentPlayer.name);
-//         currentPlayer.showStatus();
-//         otherPlayer.showStatus();
-  
-//         const itemForCurrentPlayer = this.getRandomItem();
-//         const itemForOtherPlayer = this.getRandomItem();
-  
-//         console.log(`${currentPlayer.name} gets an item: `, itemForCurrentPlayer);
-//         console.log(`${otherPlayer.name} gets an item: `, itemForOtherPlayer);
-  
-//         currentPlayer.useItem(itemForCurrentPlayer);
-//         otherPlayer.useItem(itemForOtherPlayer);
-  
-//         currentPlayer.showStatus();
-//         otherPlayer.showStatus();
-  
-//         otherPlayer.hit(currentPlayer.power);
-  
-//         [currentPlayer, otherPlayer] = [otherPlayer, currentPlayer];
-//       }
-  
-//       const winner =
-//         this.player1.health > 0 ? this.player1.name : this.player2.name;
-//       console.log(`Winner is ${winner}`);
-//     }
-//   }
-  
-//   const player1 = new Player("Player A");
-//   const player2 = new Player("Player B");
-//   const game = new ShootingGame(player1, player2);
-//   game.start();
+// }
+
+
+// const player1 = new Player("Budi");
+// const player2 = new Player("Siti");
+// const game = new ShootingGame(player1, player2);
+// console.log(game.start())
 
 
   // Exercise - Employee Salary
@@ -137,9 +129,9 @@
 
 //   calculateSalary() {
 //     if (this.workingHours > 6) {
-//       return (6 * this.baseSalary) + ((this.workingHours - 6) * this.overtimeSalary);
+//       return ((6 * this.baseSalary) + ((this.workingHours - 6) * this.overtimeSalary)).toLocaleString("id-ID");
 //     } else {
-//       return this.baseSalary * this.workingHours;
+//       return (this.baseSalary * this.workingHours).toLocaleString("id-ID");
 //     }
 //   }
 // }
@@ -152,9 +144,9 @@
 
 //   calculateSalary() {
 //     if (this.workingHours > 6) {
-//       return (6 * this.baseSalary) + ((this.workingHours - 6) * this.overtimeSalary);
+//       return ((6 * this.baseSalary) + ((this.workingHours - 6) * this.overtimeSalary)).toLocaleString("id-ID");
 //     } else {
-//       return this.baseSalary * this.workingHours;
+//       return (this.baseSalary * this.workingHours).toLocaleString("id-ID");
 //     }
 //   }
 // }
@@ -166,3 +158,77 @@
 // const partTime = new PartTimeEmployee(50000, 30000);
 // partTime.addWorkingHours(8);
 // console.log(partTime.calculateSalary());
+
+
+
+class Employee {
+  constructor(name) {
+    this.name = name;
+    this.workingHours = 0;
+  }
+}
+
+class FulltimeEmployee extends Employee {
+  constructor(name) {
+    super(name);
+  }
+
+  addWorkingHours (hours) {
+    this.workingHours += hours;
+  }
+
+  calculateTotalSalary() {
+    const normalRate = 100000;
+    const overTimeRate = 75000;
+
+    if(this.workingHours <= 0) {
+      return {
+        total: "Rp" + (this.workingHours * normalRate).toLocaleString("id-ID")
+      };
+    } else {
+      const normalHour = 6;
+      const overTimeHour = this.workingHours - normalHour;
+
+      return {
+        total: "Rp" + (overTimeHour*overTimeRate + normalHour*normalRate).toLocaleString("id-ID")
+      };
+    }
+  }
+}
+
+class ParttimeEmployee extends Employee {
+  constructor(name) {
+    super(name);
+  }
+
+  addWorkingHours (hours) {
+    this.workingHours += hours;
+  }
+
+  calculateTotalSalary() {
+    const normalRate = 50000;
+    const overTimeRate = 30000;
+
+    if(this.workingHours <= 0) {
+      return {
+        total: "Rp" + (this.workingHours * normalRate).toLocaleString("id-ID")
+      };
+    } else {
+      const normalHour = 6;
+      const overTimeHour = this.workingHours - normalHour;
+
+      return {
+        total: "Rp" + (overTimeHour*overTimeRate + normalHour*normalRate).toLocaleString("id-ID")
+      };
+    }
+  }
+}
+
+const employee1 = new FulltimeEmployee("Budi");
+employee1.addWorkingHours(7);
+console.log(employee1.calculateTotalSalary())
+
+const employee2 = new ParttimeEmployee("Siti");
+employee2.addWorkingHours(6);
+console.log(employee2.calculateTotalSalary())
+
