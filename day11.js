@@ -1,11 +1,3 @@
-
-
-//         - showCatalog : menampilkan isi catalog dari toko
-
-//         - showCart : menampilkan isi cart user
-
-
-
 // buat parent class Product
 //     constructor = nama, berat, price,stok
 class Product {
