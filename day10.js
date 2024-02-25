@@ -13,22 +13,32 @@
 //     input = "085244455555"
 //     output = "(6285)-2444-55555"
 
-// function phoneNumber(num) {
-//     num = num.trim().replaceAll("-", "");
-//     if (num.length>3 && num.length <=6) {
-//         num = num.slice(0,3) + "-" + num.slice(3);
-//     }  else if(num.length > 12) {
-//         return "invalid phone number"
-//     } else if(num.length > 6) {
-//         num = "(" + "62" +  num.slice(1,3) + ")" + "-" + num.slice(3,7) + "-" + num.slice(7);
+// function phoneNum(number) {
+//     if(typeof number !== "string") {
+//         return "invalid phone number";
+//     };
+
+//     if (number.length !== 12) {
+//         return "invalid phone number";
+//     };
+
+//     for(let i=0; i<number.length;i++) {
+//         if(number[i] < "0" || number[i]>"9") {
+//             return "invalid phone number"
+//         }
 //     }
+
+//     number = "62" + number.slice(1);
+//     let template = "(xxxx)-xxxx-xxxxx";
     
-//     return num
+//     number.split("").forEach((item) => {
+//         template = template.replace("x", item);
+//     });
+
+//     return template;
 // }
 
-// const inputNum = "085244455555";
-// const output = phoneNumber(inputNum);
-// console.log(output);
+// console.log(phoneNum("085244455555"));
 
 // NO 1 ============================================================================================================
 
@@ -94,6 +104,8 @@
 //     if (this.isEmpty()) {
 //       return "kereta kosong";
 //     }
+
+
 
 //     const index = this.passenger.indexOf(name);
 
